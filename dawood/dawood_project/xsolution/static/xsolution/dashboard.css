@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.success{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(132, 255, 132);
+    color: green;
+    height: 2em;
+}

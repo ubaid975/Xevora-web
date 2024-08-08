@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="\static\xsolution\signup.css">
+  <style>
+    success{
+      display: flex;
+      width: 100%;
+      background-color:rgb(132, 255, 132);
+      color: green;
+      justify-content: center;
+      align-items: center;
+      height: 2em;
+    }
+
+    .error{
+      display: flex;
+      width: 100%;
+      background-color: #ffafc9;
+      color: red;
+      justify-content: center;
+      align-items: center;
+      height: 2em;
+    }
+  </style>
+</head>
+<body>
+ 
+  
+    
+  <header>
+    
+    <h1>Xevora Solutions</h1>
+    
+      {% for message in messages %}
+        <div class="{{message.tags}}">
+          <p>{{message}}</p>
+        </div >
+
+      {% endfor %}
+    
+  </header>
+  
+  
+  <main>
+    
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1>Sign Up</h1>
+        <form class="auth-form" method="post">
+          {% csrf_token %}
+          <label for="name">Username:</label>
+          <input type="text" id="name" name="user_name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password1" required>
+          
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="password2" required>
+          
+          <button type="submit">Sign Up</button>
+        </form>
+        <div class="social-login">
+          <button class="facebook-login">Sign Up with Facebook</button>
+          <button class="google-login">Sign Up with Google</button>
+        </div>
+        <p>Already have an account? <a href="/login/">Login</a></p>
+      </div>
+    </div>
+  </main>
+  <br><br><br>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="/">Home</a>
+
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="footer-text">
+        &copy; 2024 Xevora Solutions. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

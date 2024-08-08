@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login/Signup</title>
+  <link rel="stylesheet" href="\static\xsolution\bootstrap.css">
+  <link rel="stylesheet" href="\static\xsolution\login.css">
+  <style>
+    .success{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(132, 255, 132);
+      color: green;
+    }
+    .error{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffafc9;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <header style="display: flex; flex-direction: column-reverse; padding-bottom: 2em; align-items: center; justify-content: center;">
+
+    <h1 style="padding-top: 0.5em;">Xevora Solutions</h1 >
+    
+      {% for message in messages %}
+        <div class="{{message.tags}}">
+          <p>{{message}}</p>
+        </div >
+
+      {% endfor %}
+    
+  </header>
+  
+  <main>
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1>Login</h1>
+        <form class="auth-form" method="post" action="/login/">
+          {% csrf_token %}
+          <label for="email">Username:</label>
+          <input type="text" id="email" name="user_name" required>
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          
+          <button type="submit">Login</button>
+        </form>
+        <div class="social-login">
+          <!-- Facebook SDK -->
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+          <button class="facebook-login" id="facebook-login">Login with Facebook</button>
+          <button class="google-login" id="google-login">Login with Google</button>
+          <!-- Google SDK -->
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+        <p>Don't have an account? <a href="/signup/">Sign up</a></p>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="/">Home</a>
+
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div class="footer-text">
+        &copy; 2024 Xevora Solutions. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

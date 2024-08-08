@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <title>Xevora Solutions</title>
+  <link rel="stylesheet" type="text/css" href='\static\xsolution\bootstrap.css'>
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href='\static\xsolution\styles.css'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <script>'/alert.js'</script>
+  
+{% for message in messages %}
+  <div class="alert alert-{{message.tags}}" style="margin: 0; text-align: center;">{{message}}</div>
+{% endfor %}
+  <header >
+    <div class="logo">
+      <img src="\static\img\logo.png" alt="Xevora Solutions Logo">
+    </div>
+    <nav>
+      
+      <ul class="nav-links">
+        
+        <li><a href="/">Home</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        
+          <li><a href="/signup/">Sign Up</a></li>
+          <li><a href="/login/">Login</a></li>
+      
+        <li class="search-bar-container">
+          <form class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </li>
+      </ul>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Xevora Solutions</h1>
+      <br>
+      <p>Innovative Solutions in Data Analysis, Data Science, Machine Learning, Web Development, Computer Vision, AI Chat-Bot Development and NLP(Natural Language Processing)</p>
+      <a href="/services/" class="btn">Explore Our Services</a>
+    </div>
+  </section>
+
+  <section class="about dark-theme">
+    <div class="about-content">
+      <h2>About Xevora Solutions</h2>
+      <br>
+      <p>At Xevora Solutions, we specialize in cutting-edge technology, data science, and AI to drive innovation and solve complex challenges. Our team of experts is dedicated to delivering top-notch solutions tailored to your needs.</p>
+      <p>We leverage the latest advancements in technology to provide services that help businesses thrive in the digital age.</p>
+      <a href="/about/" class="btn">Read More</a>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-items">
+      <div class="service-item">
+        <img src="\static\img\data.jpg" alt="Service 1">
+        <h3>Data Analysis</h3>
+        <p>Transform your data into actionable insights with our expert data analysis services.</p>
+      </div>
+      <div class="service-item">
+        <img src="\static\img\science.jpg" alt="Service 2">
+        <h3>Data Science</h3>
+        <p>Implement data-driven strategies to enhance your business operations.</p>
+      </div>
+      <div class="service-item">
+        <img src="\static\img\ml.jpg" alt="Service 3">
+        <h3>Machine Learning</h3>
+        <p>Develop and deploy machine learning models to automate and optimize processes.</p>
+      </div>
+      <div class="service-item">
+        <img src="\static\img\data.jpg" alt="Service 4">
+        <h3>Web Development</h3>
+        <p>Create robust and scalable web solutions to enhance your online presence.</p>
+      </div>
+    </div>
+    <a href="/services/" class="btn">Read More</a>
+  </section>
+
+  <section class="blog" id="blog">
+    <h2>Our Blog</h2>
+    <div class="blog-posts">
+      <div class="blog-post">
+        <h3>Understanding Data Science</h3>
+        <p>Discover the basics of data science and how it can transform your business.</p>
+        <a href="/blog/" class="btn">Read More</a>
+      </div>
+      <div class="blog-post">
+        <h3>The Future of AI</h3>
+        <p>Explore the potential of AI and how it's shaping various industries.</p>
+        <a href="/blog/" class="btn">Read More</a>
+      </div>
+      <div class="blog-post">
+        <h3>Tech Trends in 2024</h3>
+        <p>Stay updated with the latest tech trends and innovations for 2024.</p>
+        <a href="/blog/" class="btn">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <p>+92-3709152202</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>muhammaddawoodmoria@gmail.com</p>
+        </div>
+      </div>
+      <form class="contact-form" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="\static\img\logo.png" alt="Xevora Solutions Logo">
+      </div>
+      <nav class="footer-links">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/about/">About Us</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+        <a href="/signup/">Sign Up</a>
+        <a href="/login/">Login</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <p class="footer-text">&copy; 2024 Xevora Solutions. All rights reserved.</p>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
+
